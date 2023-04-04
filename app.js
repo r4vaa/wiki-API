@@ -32,21 +32,29 @@ app.get('/articles', function(req, res) {
 })
 
 app.post('/articles', function(req, res) {
-    console.log(req.body.title)  
-    console.log(req.body.content)  
+    
 
     const newArticle = new Article({
         title : req.body.title,
         content: req.body.content
     })
 
-    newArticle.save().then(function(err) {
-        if(!err) {
-            res.send("successfully added a new article")
-        }else{
-            res.send(err);
-        }
+    newArticle.save()
+    .then(function(data){
+        res.send('Successfully added a new data');
+    }).catch(function(error){
+        res.send(error);
     })
+})
+
+app.delete('/articles', function(req, res){ 
+    Article.deleteMany()
+    .then(function(data){
+        res.send('Successfully deleted all articles')
+    })
+    .catch((function(err) {
+        res.send(err)
+    }))
 })
 
 

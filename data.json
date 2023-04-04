@@ -1,0 +1,36 @@
+{
+    "_id": "642bad8f6ee7a314937930f7",
+    "title": "REST",
+    "content": "REST is short for representational state Transfer , it's and architectural style for designing APIS"
+},
+{
+    "_id": "642bae696ee7a314937930f8",
+    "title": "HTML5",
+    "content": "Its Hypertext markup langauge used to create website skeleton"
+},
+{
+    "_id": "642baee26ee7a314937930fb",
+    "title": "CSS",
+    "content": "Cascading style sheet used to style our html website"
+},
+{
+    "_id": "642baefe6ee7a314937930fc",
+    "title": "NODE.js",
+    "content": "Nodejs is a javascript runtime environment helps us to use different libraries created by other developers."
+},
+{
+    "_id": "642baf5b6ee7a314937930fd",
+    "title": "JavaScript",
+    "content": "Javascript is a scripting language used for adding spark on our website"
+},
+{
+    "_id": "642bafb26ee7a314937930fe",
+    "title": "API",
+    "content": "Application programme interface used to get data from other website for our webpage"
+},
+{
+    "_id": "642c0e3daf92546c9bf591c7",
+    "title": "Dheeraj Patil",
+    "content": "Dheeraj Patil once stepped into quicksand. The quicksand couldnt escape and nearly drowned",
+    "__v": 0
+}
