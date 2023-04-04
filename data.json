@@ -1,4 +1,5 @@
-{
+
+[{
     "_id": "642bad8f6ee7a314937930f7",
     "title": "REST",
     "content": "REST is short for representational state Transfer , it's and architectural style for designing APIS"
@@ -31,6 +32,5 @@
 {
     "_id": "642c0e3daf92546c9bf591c7",
     "title": "Dheeraj Patil",
-    "content": "Dheeraj Patil once stepped into quicksand. The quicksand couldnt escape and nearly drowned",
-    "__v": 0
-}
+    "content": "Dheeraj Patil once stepped into quicksand. The quicksand couldnt escape and nearly drowned"
+}]

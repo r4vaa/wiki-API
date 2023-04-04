@@ -20,42 +20,64 @@ const articleSchema = new mongoose.Schema({
 
 const Article = mongoose.model('Article', articleSchema);
 
+/////--------------REQUEST TARGETING ALL ARTICLES----------------------/////
 
-app.get('/articles', function(req, res) {
-    Article.find({}).then(function(err,data) {
-        if(!err){
-            res.send(data);
-        }else{
-            res.send(err);
+app.route('/articles')
+    .get(
+        function(req, res) {
+            Article.find({}).then(function(err,data) {
+                if(!err){
+                    res.send(data);
+                }else{
+                    res.send(err);
+                }
+            });
         }
-    });
-})
+    )
+    .post(
+        function(req, res) {
+            const newArticle = new Article({
+                title : req.body.title,
+                content: req.body.content
+            })
 
-app.post('/articles', function(req, res) {
+            newArticle.save()
+            .then(function(data){
+                res.send('Successfully added a new data');
+            }).catch(function(error){
+                res.send(error);
+            })
+        }
+    )
+    .delete(
+        function(req, res){ 
+            Article.deleteMany()
+            .then(function(data){
+                res.send('Successfully deleted all articles')
+            })
+            .catch((function(err) {
+                res.send(err)
+            }))
+        }
+    )
+
+    
+/////--------------REQUEST TARGETING SPECIFIC ARTICLES----------------------/////
+
+
+app.route('/articles/:articleTitle')
+    .get(function(req, res) {
+
+        Article.findOne({title: req.params.articleTitle })
+        .then(function(foundArticle){
+            res.send(foundArticle)
+        })
+        .catch(function(err){
+            res.send('No articles matching that title was found')
+        })
+    });
     
 
-    const newArticle = new Article({
-        title : req.body.title,
-        content: req.body.content
-    })
-
-    newArticle.save()
-    .then(function(data){
-        res.send('Successfully added a new data');
-    }).catch(function(error){
-        res.send(error);
-    })
-})
-
-app.delete('/articles', function(req, res){ 
-    Article.deleteMany()
-    .then(function(data){
-        res.send('Successfully deleted all articles')
-    })
-    .catch((function(err) {
-        res.send(err)
-    }))
-})
 
 
 
