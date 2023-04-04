@@ -22,8 +22,12 @@ const Article = mongoose.model('Article', articleSchema);
 
 
 app.get('/articles', function(req, res) {
-    Article.find({}).then(data => {
-        res.send(data)
+    Article.find({}).then(function(err,data) {
+        if(!err){
+            res.send(data);
+        }else{
+            res.send(err);
+        }
     });
 })
 
